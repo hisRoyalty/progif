@@ -4,6 +4,7 @@ const Rain = require('../libs/gif/rain')
 const Freeze = require('../libs/gif/freeze');
 const Multiply = require("../libs/gif/multiply");
 const Bomb = require("../libs/gif/bomb");
+const Zoom = fequire("../libs/gif/zoom")
 
 
 class Main {
@@ -95,6 +96,24 @@ class Main {
 
         return await Freeze(image)
     }
+    /**
+     * Applies zoom effect into an image. Returns a GIF.
+     * @param  {Buffer|string} image Image to use for manipulation.
+     * @param  {Number} frames Number of frames resulting in GIF
+     * @param  {Number} zoomSteps Number of zoom levels to animate.
+     * @returns {Promise<Buffer>}
+     */
+    static async zoom(image, frames, zoomSteps) {
+        if(!image) {
+            throw Error(
+                '[ProGIF]: Image parameter is missing!'
+            )
+
+        }
+
+        return await Zoom(image, frames, zoomSteps)
+    }
+
 }
 
 module.exports = Main;
