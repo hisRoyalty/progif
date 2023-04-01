@@ -19,6 +19,10 @@ ________________________________________________________________________________
 
 Please use [Prettier](https://prettier.io/)!
 
+### Commits
+
+Make sure you use basic commit message & description rules, please try to use emoticons as much as possible to make it visually appealing for viewers. 
+
 ### Pull Requests and Issues
 
 Please, we do not want issues and pull requests with no description. In pull requests, *please* describe ***in detail*** about your changes in and why we should merge it. In issues, please describe the problem in detail. Remember, always English.
