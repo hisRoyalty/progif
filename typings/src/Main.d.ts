@@ -27,4 +27,17 @@ declare class Main {
      * @returns {Promise<Buffer>}
      */
     static freeze(image: Buffer | string): Promise<Buffer>;
+
+
+    /**
+     * Applies zoom effect into an image. Returns a GIF.
+     * @param  {Buffer|string} image Image to use for manipulation.
+     * @param  {Number} frames Number of frames resulting in GIF
+     * @param  {Number} zoomSteps Number of zoom levels to animate.
+     * @returns {Promise<Buffer>}
+     */
+    static zoom(image: Buffer | string, frames: Number, zoomSteps: Number): Promise<Buffer>;
+
+
+
 }
