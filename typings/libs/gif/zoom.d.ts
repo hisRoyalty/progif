@@ -1,2 +1,2 @@
-declare function _exports(image: any, args: any): Promise<any>;
+declare function _exports(img: any, frames: any, zoomSteps: any): Promise<any>;
 export = _exports;
