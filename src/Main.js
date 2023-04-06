@@ -4,7 +4,9 @@ const Rain = require('../libs/gif/rain')
 const Freeze = require('../libs/gif/freeze');
 const Multiply = require("../libs/gif/multiply");
 const Bomb = require("../libs/gif/bomb");
-const Zoom = fequire("../libs/gif/zoom")
+const Zoom = require("../libs/gif/zoom")
+const ZoomOut = require("../libs/gif/zoomOut")
+
 
 
 class Main {
@@ -99,8 +101,8 @@ class Main {
     /**
      * Applies zoom effect into an image. Returns a GIF.
      * @param  {Buffer|string} image Image to use for manipulation.
-     * @param  {Number} frames Number of frames resulting in GIF
-     * @param  {Number} zoomSteps Number of zoom levels to animate.
+     * @param  {number} frames Number of frames resulting in GIF
+     * @param  {number} zoomSteps Number of zoom levels to animate
      * @returns {Promise<Buffer>}
      */
     static async zoom(image, frames, zoomSteps) {
@@ -112,6 +114,27 @@ class Main {
         }
 
         return await Zoom(image, frames, zoomSteps)
+    }
+
+    /**
+     * Applies an animation of zooming out of an image. Returns a GIF.
+     * @param  {Buffer|string} image Image to use for manipulation.
+     * @param  {number} numberOfFrames Number of frames resulting in GIF
+     * @param  {number} scale Number of zoom levels to animate.
+     * @param  {string} background Background (optional)
+     * @param  {number} delay Delay between frames (optional)
+     * @param  {number} quality Quality of GIF (optional)
+     * @returns {Promise<Buffer>}
+     */
+    static async zoomOut(image, numberOfFrames = 30, scale = 1, background, delay = 30, quality = 10) {
+        if(!image) {
+            throw Error(
+                '[ProGIF]: Image parameter is missing!'
+            )
+
+        }
+
+        return await ZoomOut(image, numberOfFrames, scale, background, delay, quality)
     }
 
 }
