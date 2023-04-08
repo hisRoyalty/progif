@@ -1,14 +1,14 @@
 const Canvas = require('canvas');
 const GIFEncoder = require('gifencoder');
 
-module.exports = async (img, frames, zoomSteps)  => {
+module.exports = async (img, frames, zoomSteps, delay = 50)  => {
   const image = await Canvas.loadImage(img);
   const canvas = Canvas.createCanvas(image.width, image.height);
   const ctx = canvas.getContext('2d');
   const encoder = new GIFEncoder(image.width, image.height);
   encoder.start();
   encoder.setRepeat(0);
-  encoder.setDelay(50);
+  encoder.setDelay(delay);
 
   const zoomFactors = [];
   for (let i = 0; i < frames; i++) {

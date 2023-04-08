@@ -103,9 +103,10 @@ class Main {
      * @param  {Buffer|string} image Image to use for manipulation.
      * @param  {number} frames Number of frames resulting in GIF
      * @param  {number} zoomSteps Number of zoom levels to animate
+     * @param  {number} delay Delay between frames (optional)
      * @returns {Promise<Buffer>}
      */
-    static async zoom(image, frames, zoomSteps) {
+    static async zoom(image, frames, zoomSteps, delay = 50) {
         if(!image) {
             throw Error(
                 '[ProGIF]: Image parameter is missing!'
@@ -113,7 +114,7 @@ class Main {
 
         }
 
-        return await Zoom(image, frames, zoomSteps)
+        return await Zoom(image, frames, zoomSteps, delay)
     }
 
     /**
