@@ -2,11 +2,11 @@ const GIFEncoder = require('gifencoder');
 const Canvas = require('canvas');
 
 
-module.exports = async(image, args) => {
+module.exports = async(image, args, delay = 500) => {
     const encoder = new GIFEncoder(150, 150);
     encoder.start();
     encoder.setRepeat(0);
-    encoder.setDelay(500);
+    encoder.setDelay(delay);
     encoder.setQuality(10);
     
     const canvas = Canvas.createCanvas(150, 150);

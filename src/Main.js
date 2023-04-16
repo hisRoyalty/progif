@@ -59,10 +59,11 @@ class Main {
      * Puts text on a GIF, likewise a 'meme'.
      * @param {Buffer|string} image Image to use for the manipulation.
      * @param {string} args Text which is displayed on the returned GIF. It is separated by spaces.
+     * @param {number} delay Delay between frames.
      * @returns {Promise<Buffer>}
      */
-    static async textOnAvatar(image, args) {
-        return await TextOnAvatar(image, args)
+    static async textOnAvatar(image, args, delay = 500) {
+        return await TextOnAvatar(image, args, delay)
         
         
     }
